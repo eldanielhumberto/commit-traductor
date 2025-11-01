@@ -1,0 +1,26 @@
+{
+	"name": "commit-traductor",
+	"description": "Library for translating commits",
+	"module": "index.ts",
+	"version": "0.0.2",
+	"bin": {
+		"commit-traductor": "src/cli.ts"
+	},
+	"type": "module",
+	"keywords": [
+		"commit",
+		"husky",
+		"bun"
+	],
+	"author": "eldanilhumberto",
+	"dependencies": {
+		"translate": "^3.0.1"
+	},
+	"license": "MIT",
+	"devDependencies": {
+		"@types/bun": "latest"
+	},
+	"peerDependencies": {
+		"typescript": "^5"
+	}
+}
