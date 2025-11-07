@@ -5,10 +5,10 @@ At the moment, the library only translates from Spanish to English.
 
 ## Installation
 
-You can install the package via pip:
+You can install `commit-traductor` using bun, npm, yarn, or pnpm (recommended: bun):
 
 ```bash
-bun add commit-traductor # or npm, yarn, pnpm
+bun add commit-traductor
 ```
 
 ## Configuration

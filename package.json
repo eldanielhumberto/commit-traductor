@@ -13,6 +13,10 @@
 		"bun"
 	],
 	"author": "eldanilhumberto",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/eldanielhumberto/commit-traductor.git"
+	},
 	"dependencies": {
 		"translate": "^3.0.1"
 	},
