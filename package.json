@@ -2,7 +2,7 @@
 	"name": "commit-traductor",
 	"description": "Library for translating commits",
 	"module": "index.ts",
-	"version": "0.0.2",
+	"version": "0.0.3",
 	"bin": {
 		"commit-traductor": "src/cli.ts"
 	},
