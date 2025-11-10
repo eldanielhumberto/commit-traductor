@@ -8,12 +8,13 @@ At the moment, the library only translates from Spanish to English.
 You can install `commit-traductor` using bun, npm, yarn, or pnpm (recommended: bun):
 
 ```bash
-bun add commit-traductor
+bun add commit-traductor -D
 ```
 
 ## Configuration
 
 Need husky to run the pre-commit hook.
+Previously, you must have created your repository by running `git init`.
 
 ```bash
 bun add husky -D # or npm, yarn, pnpm
