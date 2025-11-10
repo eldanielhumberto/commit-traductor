@@ -6,5 +6,5 @@ export const processCommitMessage = async (file: string) => {
 	const newMsg = await renameCommit(msg);
 
 	fs.writeFileSync(file, newMsg, 'utf8');
-	console.log(`Commit translated to: ${newMsg}\n`);
+	console.log(`Commit translated to: "${newMsg}"\n`);
 };
