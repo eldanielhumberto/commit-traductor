@@ -9,7 +9,9 @@
 	"type": "module",
 	"keywords": [
 		"commit",
+		"utility",
 		"husky",
+		"cli",
 		"bun"
 	],
 	"author": "eldanilhumberto",
@@ -18,6 +20,7 @@
 		"url": "git+https://github.com/eldanielhumberto/commit-traductor.git"
 	},
 	"dependencies": {
+		"meow": "^14.0.0",
 		"translate": "^3.0.1"
 	},
 	"license": "MIT",

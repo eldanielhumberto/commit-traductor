@@ -1,11 +1,13 @@
 #!/usr/bin/env bun
-import { processCommitMessage } from '.';
+import meow from 'meow';
+import { translateMessage } from './commands/translateMessage';
 
-const file = process.argv[2];
+const cli = meow(
+	`
+  🧠 commit-traductor`,
+	{
+		importMeta: import.meta,
+	}
+);
 
-if (!file) {
-	console.error('❌ No se proporcionó el archivo del mensaje de commit.');
-	process.exit(1);
-}
-
-processCommitMessage(file);
+translateMessage(cli);
