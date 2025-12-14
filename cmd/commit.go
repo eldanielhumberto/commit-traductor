@@ -3,6 +3,7 @@ package cmd
 import (
 	"context"
 	"fmt"
+	"os/exec"
 	"time"
 
 	"github.com/eldanielhumberto/ct/internal/config"
@@ -50,7 +51,15 @@ Example:
 			return fmt.Errorf("translation failed: %w", err)
 		}
 
-		fmt.Printf("Translated message (%s): %s\n", lang, translated)
+		fmt.Printf("Translated message (%s): %s\n\n", lang, translated)
+
+		cmdGit := exec.Command("git", "commit", "-m", translated)
+		output, err := cmdGit.CombinedOutput()
+		if err != nil {
+			return fmt.Errorf("git commit failed: %s", string(output))
+		}
+
+		fmt.Println(string(output))
 		return nil
 	},
 }
