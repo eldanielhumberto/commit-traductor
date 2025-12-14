@@ -43,6 +43,11 @@ GEMINI_API_KEY=your_api_key_here
 > export GEMINI_API_KEY=your_api_key_here
 > ```
 
+> **Note**: Add the go binaries to your PATH:
+> ```bash
+> export PATH="$PATH:$HOME/go/bin"
+> ```
+
 ## 📖 Usage
 
 ### Basic Usage
