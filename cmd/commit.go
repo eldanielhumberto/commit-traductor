@@ -9,28 +9,28 @@ import (
 // commitCmd represents the commit command
 var commitCmd = &cobra.Command{
 	Use:   "commit",
-	Short: "A brief description of your command",
-	Long: `A longer description that spans multiple lines and likely contains examples
-and usage of using your command. For example:
+	Short: "Commits changes and translates the commit message to another language.",
+	Long: `This command performs a git commit operation and then translates the commit message to a specified target language.
+It's useful for projects requiring multilingual commit logs or for teams working across different linguistic backgrounds.
 
-Cobra is a CLI library for Go that empowers applications.
-This application is a tool to generate the needed files
-to quickly create a Cobra application.`,
+Example:
+$ ct commit "Initial commit" --lang es
+$ ct commit "Commit inicial" --lang en`,
 	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Println("commit called")
+		lang, _ := cmd.Flags().GetString("lang")
+		if len(args) < 1 {
+			fmt.Println(`commit message is required. Example: ct commit "Initial commit"`)
+			return
+		}
+
+		commitMessage := args[0]
+
+		fmt.Println("commit: ", commitMessage)
+		fmt.Println("commit called with lang:", lang)
 	},
 }
 
 func init() {
+	commitCmd.Flags().StringP("lang", "l", "en", "Target language for translation")
 	rootCmd.AddCommand(commitCmd)
-
-	// Here you will define your flags and configuration settings.
-
-	// Cobra supports Persistent Flags which will work for this command
-	// and all subcommands, e.g.:
-	// commitCmd.PersistentFlags().String("foo", "", "A help for foo")
-
-	// Cobra supports local flags which will only run when this command
-	// is called directly, e.g.:
-	// commitCmd.Flags().BoolP("toggle", "t", false, "Help message for toggle")
 }
