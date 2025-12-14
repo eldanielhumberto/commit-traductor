@@ -53,6 +53,7 @@ Example:
 
 		fmt.Printf("Translated message (%s): %s\n\n", lang, translated)
 
+		// Commit translated message
 		cmdGit := exec.Command("git", "commit", "-m", translated)
 		output, err := cmdGit.CombinedOutput()
 		if err != nil {
